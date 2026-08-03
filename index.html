@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vervelio — Build What Matters</title>
+  <title>Vervelio - Build What Matters</title>
   <meta name="description" content="Vervelio is a novel software development firm that creates SaaS solutions, matches technical founders with business minds, and ships AI-powered products at speed. Based in Detroit, working globally.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Vervelio — Build What Matters">
+  <meta property="og:title" content="Vervelio - Build What Matters">
   <meta property="og:description" content="SaaS development, co-founder matching, and AI-first engineering. Detroit-born, globally distributed.">
   <meta property="og:type" content="website">
 
@@ -16,6 +16,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="./assets/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="./assets/og-cover.jpg">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="stylesheet" href="./base.css">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -34,12 +39,10 @@
         </div>
       </div>
       <nav class="header-nav" aria-label="Main navigation">
-        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
         <div class="nav-links">
+          <a class="nav-link" href="#products">Products</a>
+          <a class="nav-link" href="#pipeline">Pipeline</a>
+          <a class="nav-link" href="#contact">Contact</a>
           <span class="nav-prefix">&gt;</span>
           <span class="theme-switcher">
             <button class="theme-btn" data-theme-set="green" aria-label="Switch to green terminal mode" title="Terminal">
@@ -53,6 +56,25 @@
             </button>
           </span>
         </div>
+
+        <!-- Sound control. Stays outside .nav-links so it remains reachable on
+             mobile, where the nav collapses into the menu. -->
+        <div class="sound-wrap">
+          <button class="sound-toggle" id="soundToggle" aria-pressed="true" aria-label="Turn off ambient sound" title="Ambient sound">
+            <svg class="sound-icon sound-icon--on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            <svg class="sound-icon sound-icon--off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          </button>
+          <div class="sound-hint" id="soundHint" role="status" hidden>
+            <span>Sound is on &mdash; tap to mute</span>
+            <button class="sound-hint-close" type="button" aria-label="Dismiss">&times;</button>
+          </div>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </nav>
     </div>
   </header>
@@ -60,6 +82,11 @@
   <!-- MOBILE NAV OVERLAY -->
   <div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
     <div class="mobile-nav-content">
+      <nav class="mobile-nav-links" aria-label="Sections">
+        <a href="#products">Products</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#contact">Contact</a>
+      </nav>
       <span class="theme-switcher-mobile">
         <button class="theme-btn" data-theme-set="green" aria-label="Switch to green terminal mode">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
@@ -99,7 +126,7 @@
               <span class="prompt">$</span> <span class="cmd">echo</span> $LOCATION
             </p>
             <p class="terminal-output" data-delay="1600">
-              Detroit, Michigan — working globally with anyone who has the right passion.
+              Detroit, Michigan - working globally with anyone who has the right passion.
             </p>
             <p class="terminal-line" data-delay="2000">
               <span class="prompt">$</span> <span class="cursor-blink">_</span>
@@ -118,7 +145,7 @@
           <div class="what-card what-card--large">
             <div class="card-tag">SaaS Pipeline</div>
             <h2>We don't wait for clients. We build products.</h2>
-            <p>Vervelio operates its own SaaS pipeline — conceiving, developing, and launching software products from scratch. We own the entire lifecycle: ideation, architecture, engineering, deployment, and growth. Every product we launch sharpens the tooling our next one inherits.</p>
+            <p>Vervelio operates its own SaaS pipeline - conceiving, developing, and launching software products from scratch. We own the entire lifecycle: ideation, architecture, engineering, deployment, and growth. Every product we launch sharpens the tooling our next one inherits.</p>
           </div>
           <div class="what-card">
             <div class="card-tag">Co-Founder Matching</div>
@@ -128,7 +155,7 @@
           <div class="what-card">
             <div class="card-tag">Critical Tooling</div>
             <h2>The 80% that every business needs</h2>
-            <p>Auth, billing, dashboards, notifications, analytics — the infrastructure every SaaS needs before it can differentiate. We've built it. You inherit it. Your time-to-market compresses from months to weeks.</p>
+            <p>Auth, billing, dashboards, notifications, analytics - the infrastructure every SaaS needs before it can differentiate. We've built it. You inherit it. Your time-to-market compresses from months to weeks.</p>
           </div>
         </div>
       </div>
@@ -142,7 +169,7 @@
           <div class="spec-item">
             <div class="spec-num">01</div>
             <h3>Generative AI</h3>
-            <p>Production-grade systems that leverage large language models, image generation, and multimodal AI — not demos, not wrappers. Real products with real governance.</p>
+            <p>Production-grade systems that leverage large language models, image generation, and multimodal AI - not demos, not wrappers. Real products with real governance.</p>
           </div>
           <div class="spec-item">
             <div class="spec-num">02</div>
@@ -157,7 +184,7 @@
           <div class="spec-item">
             <div class="spec-num">04</div>
             <h3>Frontier Data Models</h3>
-            <p>Data architectures designed for orchestration — ingesting, transforming, and routing data across distributed systems. We build the nervous system that connects your AI to your operations.</p>
+            <p>Data architectures designed for orchestration - ingesting, transforming, and routing data across distributed systems. We build the nervous system that connects your AI to your operations.</p>
           </div>
         </div>
       </div>
@@ -175,7 +202,7 @@
         <div class="vision-block">
           <div class="section-label">// VISION</div>
           <blockquote class="mission-quote">
-            <p>A world where the best ideas win — regardless of whether their creator can code or close a deal. We're building the firm that makes technical and business talent interchangeable, and ships the products that prove it.</p>
+            <p>A world where the best ideas win - regardless of whether their creator can code or close a deal. We're building the firm that makes technical and business talent interchangeable, and ships the products that prove it.</p>
           </blockquote>
         </div>
       </div>
@@ -201,12 +228,12 @@
             <div class="process-step">
               <span class="process-ts">[STAGE_02]</span>
               <span class="process-name">Architect</span>
-              <p class="process-desc">Design the system. Select the stack. Map the data model. Define governance from day one — not after the breach. Inherit shared tooling.</p>
+              <p class="process-desc">Design the system. Select the stack. Map the data model. Define governance from day one - not after the breach. Inherit shared tooling.</p>
             </div>
             <div class="process-step">
               <span class="process-ts">[STAGE_03]</span>
               <span class="process-name">Build</span>
-              <p class="process-desc">Ship fast with our pre-built foundation. Auth, billing, monitoring, CI/CD — already done. Your team writes the code that differentiates.</p>
+              <p class="process-desc">Ship fast with our pre-built foundation. Auth, billing, monitoring, CI/CD - already done. Your team writes the code that differentiates.</p>
             </div>
             <div class="process-step">
               <span class="process-ts">[STAGE_04]</span>
@@ -216,8 +243,180 @@
             <div class="process-step">
               <span class="process-ts">[STAGE_05]</span>
               <span class="process-name">Scale</span>
-              <p class="process-desc">Growth engineering, performance optimization, and expanding the product surface. The pipeline feeds back — every launch makes the next one faster.</p>
+              <p class="process-desc">Growth engineering, performance optimization, and expanding the product surface. The pipeline feeds back - every launch makes the next one faster.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section section-products" id="products">
+      <div class="container">
+        <div class="section-label">// PRODUCTS</div>
+        <p class="section-intro">Each stage above is a product you can buy. These are ours &mdash; conceived, built and shipped in-house.</p>
+
+        <div class="product-list">
+
+          <!-- NidaMind -->
+          <article class="product">
+            <div class="product-media">
+              <div class="stopmotion" data-seq="nidamind" aria-hidden="true">
+                <img class="sm-frame sm-frame--active" src="./assets/stopmotion/nidamind-01.webp" width="1280" height="714" alt="" decoding="async" fetchpriority="low">
+                <img class="sm-frame" data-src="./assets/stopmotion/nidamind-02.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/nidamind-03.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/nidamind-04.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/nidamind-05.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/nidamind-06.webp" width="1280" height="714" alt="" decoding="async">
+              </div>
+              <p class="product-caption">Two in the morning, still connecting things.</p>
+            </div>
+            <div class="product-body">
+              <div class="product-stage">[STAGE_01] &middot; IDENTIFY</div>
+              <h2 class="product-name">NidaMind</h2>
+              <a class="product-link" href="https://nidamind.com" target="_blank" rel="noopener">nidamind.com <span class="product-link-arrow">&rarr;</span></a>
+              <p class="product-thesis">Know what to build before you build it.</p>
+              <p class="product-desc">Most product ideas start as a hunch. NidaMind starts with evidence. It listens to what people are already complaining about in public, finds the complaints that keep repeating, and hands you the ones worth building &mdash; each with the problem spelled out, who has it, who is already trying to solve it, and where the gap is.</p>
+              <ul class="product-facts" role="list">
+                <li>Ideas come from real conversations, not guesswork</li>
+                <li>Every idea arrives with its likely customer, its competitors, and a first plan to build it</li>
+                <li>Groups the same complaint together however differently people phrase it</li>
+                <li>Refreshes itself around the clock, so nothing on the list is stale</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Weft -->
+          <article class="product product--reverse">
+            <div class="product-media">
+              <div class="stopmotion" data-seq="weft" aria-hidden="true">
+                <img class="sm-frame sm-frame--active" src="./assets/stopmotion/weft-01.webp" width="1280" height="714" alt="" decoding="async" fetchpriority="low">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-02.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-03.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-04.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-05.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-06.webp" width="1280" height="714" alt="" decoding="async">
+              </div>
+              <p class="product-caption">Separate threads, one cloth.</p>
+            </div>
+            <div class="product-body">
+              <div class="product-stage">[STAGE_03] &middot; BUILD</div>
+              <h2 class="product-name">Weft</h2>
+              <p class="product-thesis">Your work, woven into one map.</p>
+              <p class="product-desc">Your real work is scattered and mostly invisible &mdash; half-finished branches on your laptop, decisions buried in a chat that already ended, notes in five places, and nothing tying a broken deploy back to the change that caused it. Weft watches quietly in the background and weaves all of it into one map you can search, share, and pick back up tomorrow.</p>
+              <ul class="product-facts" role="list">
+                <li>Shows the work actually in progress, not just what has been finished and filed</li>
+                <li>Keeps a readable record of what an AI assistant did and why, long after the chat is gone</li>
+                <li>Notes, tasks and code all linked together and searchable</li>
+                <li>Tells you what has gone quiet, what is overdue, and what just broke</li>
+                <li>Runs on your own machine &mdash; your code never has to leave it</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- thewoofback.com -->
+          <article class="product">
+            <div class="product-media">
+              <div class="stopmotion" data-seq="woofback" aria-hidden="true">
+                <img class="sm-frame sm-frame--active" src="./assets/stopmotion/woofback-01.webp" width="1280" height="714" alt="" decoding="async" fetchpriority="low">
+                <img class="sm-frame" data-src="./assets/stopmotion/woofback-02.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/woofback-03.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/woofback-04.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/woofback-05.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/woofback-06.webp" width="1280" height="714" alt="" decoding="async">
+              </div>
+              <p class="product-caption">Twelve screens, one room.</p>
+            </div>
+            <div class="product-body">
+              <div class="product-stage">[STAGE_04] &middot; LAUNCH</div>
+              <h2 class="product-name">thewoofback.com</h2>
+              <a class="product-link" href="https://thewoofback.com" target="_blank" rel="noopener">thewoofback.com <span class="product-link-arrow">&rarr;</span></a>
+              <p class="product-thesis">An entire growth department, in one system.</p>
+              <p class="product-desc">Give it a subject and it researches, writes and publishes the finished piece. Then it keeps watch: where you rank, which AI assistants are quoting you, who visited, who got in touch, and what it was worth. Run one brand or fifty side by side, each with its own team, look and voice &mdash; and when you need more clients, it goes and finds them for you.</p>
+              <ul class="product-facts" role="list">
+                <li>Researches, writes and publishes finished work &mdash; every figure traced to a named source and date</li>
+                <li>Tracks where you rank, and which AI assistants are quoting you</li>
+                <li>Turns readers into enquiries: forms, scoring, and routing straight to your inbox or CRM</li>
+                <li>Tests two versions of a page against each other and keeps the winner</li>
+                <li>Watches your backlinks, page speed, broken links and the keywords you are missing</li>
+                <li>Finds new clients, audits their site, and estimates what they already spend on ads</li>
+                <li>Client-ready reports every month, without you rewriting them</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- DoorYard -->
+          <article class="product product--reverse">
+            <div class="product-media">
+              <div class="stopmotion" data-seq="dooryard" aria-hidden="true">
+                <img class="sm-frame sm-frame--active" src="./assets/stopmotion/dooryard-01.webp" width="1280" height="714" alt="" decoding="async" fetchpriority="low">
+                <img class="sm-frame" data-src="./assets/stopmotion/dooryard-02.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/dooryard-03.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/dooryard-04.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/dooryard-05.webp" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/dooryard-06.webp" width="1280" height="714" alt="" decoding="async">
+              </div>
+              <p class="product-caption">The block, waking up.</p>
+            </div>
+            <div class="product-body">
+              <div class="product-stage">[STAGE_05] &middot; SCALE</div>
+              <h2 class="product-name">DoorYard</h2>
+              <p class="product-thesis">The most under-used asset in home services is a route that is already moving.</p>
+              <p class="product-desc">A crew already parked on your street can mow one more lawn for almost nothing extra. DoorYard lets them offer that spare slot, at a set price, to every household nearby who asked to hear about it &mdash; and neighbours book it with one tap. The crew fills a gap in the day. The street gets same-day work. Nobody pays for a phone number that never answers.</p>
+              <ul class="product-facts" role="list">
+                <li>Offers only go out when a crew is genuinely close by</li>
+                <li>You pay when a job is actually booked &mdash; never for a lead that goes nowhere</li>
+                <li>Two extra jobs a day is around $1,600 a month of work that would have been missed</li>
+                <li>One tap to book, on the phone people already have</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVELOPMENT PIPELINE -->
+    <section class="section section-pipeline" id="pipeline">
+      <div class="container">
+        <div class="section-label">// DEVELOPMENT_PIPELINE</div>
+        <p class="section-intro">What's on the bench right now. Listed honestly &mdash; status is what it is, not what we'd like it to be.</p>
+        <div class="process-terminal">
+          <div class="terminal-bar">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">queue.log</span>
+          </div>
+          <div class="terminal-body process-body">
+
+            <div class="process-step pipeline-step">
+              <div class="pipeline-head">
+                <span class="process-ts">[QUEUED]</span>
+                <span class="status-pill status-pill--design">DESIGN</span>
+              </div>
+              <span class="process-name">Accounting &amp; payroll</span>
+              <p class="process-desc">Scoped, in design. No code committed yet.</p>
+            </div>
+
+            <div class="process-step pipeline-step">
+              <div class="pipeline-head">
+                <span class="process-ts">[QUEUED]</span>
+                <span class="status-pill status-pill--design">DESIGN</span>
+              </div>
+              <span class="process-name">UGC &amp; affiliate agency</span>
+              <p class="process-desc">Scoped, in design. No code committed yet.</p>
+            </div>
+
+            <div class="process-step pipeline-step">
+              <div class="pipeline-head">
+                <span class="process-ts">[QUEUED]</span>
+                <span class="status-pill status-pill--design">DESIGN</span>
+              </div>
+              <span class="process-name">Stock tracking</span>
+              <p class="process-desc">Scoped, in design. No code committed yet.</p>
+            </div>
+
           </div>
         </div>
       </div>
@@ -229,14 +428,14 @@
         <div class="section-label">// ORIGIN</div>
         <div class="detroit-content">
           <h2>Rooted in Detroit.</h2>
-          <p>Detroit understands reinvention. It knows what it means to build something from nothing, to bet on craft when the world has moved on. That's our DNA. We build with the grit of a city that refuses to be defined by its past — and the ambition of one that's writing its future.</p>
+          <p>Detroit understands reinvention. It knows what it means to build something from nothing, to bet on craft when the world has moved on. That's our DNA. We build with the grit of a city that refuses to be defined by its past - and the ambition of one that's writing its future.</p>
           <p class="detroit-sub">We work with founders, engineers, and business builders anywhere in the world. Geography is not a filter. Passion is.</p>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="section section-cta">
+    <section class="section section-cta" id="contact">
       <div class="container">
         <div class="cta-terminal">
           <div class="terminal-bar">
@@ -250,7 +449,7 @@
               <span class="prompt">$</span> <span class="cmd">echo</span> "Ready to build something?"
             </p>
             <p class="terminal-output cta-output">
-              Whether you have the vision or the engineering — we have the other half.
+              Whether you have the vision or the engineering - we have the other half.
             </p>
             <p class="terminal-line">
               <span class="prompt">$</span> <span class="cmd">mail</span> <a href="mailto:hello@vervelio.com" class="cta-link">hello@vervelio.com</a>
@@ -275,67 +474,15 @@
     </div>
   </footer>
 
+  <!-- AMBIENT SOUND - armed ON by default, but browsers refuse audio without a
+       user gesture, so playback begins on the visitor's first click/tap/keypress.
+       One quiet texture per diorama, only while that product is on screen, and
+       only ever one at a time. An explicit opt-out is remembered. -->
+  <audio data-layer="nidamind" src="./assets/audio/layer-nidamind.mp3?v=3" loop preload="none"></audio>
+  <audio data-layer="weft" src="./assets/audio/layer-weft.mp3?v=4" loop preload="none"></audio>
+  <audio data-layer="woofback" src="./assets/audio/layer-woofback.mp3?v=3" loop preload="none"></audio>
+  <audio data-layer="dooryard" src="./assets/audio/layer-dooryard.mp3?v=2" loop preload="none"></audio>
+
   <script src="./app.js" defer></script>
-<script data-pplx-inline-edit>
-(function(){
-  if(window===window.top)return;
-  function inlineAll(orig,clone){
-    if(orig.nodeType!==1)return;
-    try{
-      var cs=getComputedStyle(orig);
-      var t='';
-      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
-      clone.style.cssText=t;
-    }catch(e){}
-    var oc=orig.children,cc=clone.children;
-    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
-  }
-  function stripExternal(clone){
-    var imgs=clone.querySelectorAll('img');
-    for(var i=0;i<imgs.length;i++){
-      var s=imgs[i].getAttribute('src');
-      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
-    }
-    var all=clone.querySelectorAll('*');
-    for(var i=0;i<all.length;i++){
-      var st=all[i].style.cssText;
-      if(st&&st.indexOf('url(')>=0){
-        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
-      }
-    }
-  }
-  window.addEventListener('message',function(e){
-    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
-    var scrollX=window.scrollX||window.pageXOffset||0;
-    var scrollY=window.scrollY||window.pageYOffset||0;
-    var w=window.innerWidth,h=window.innerHeight;
-    try{
-      var clone=document.documentElement.cloneNode(true);
-      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
-      for(var i=0;i<rm.length;i++){rm[i].remove();}
-      inlineAll(document.documentElement,clone);
-      stripExternal(clone);
-      var html=new XMLSerializer().serializeToString(clone);
-      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
-        +'<foreignObject width="100%" height="100%">'
-        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
-        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
-        +html+'</div></div></foreignObject></svg>';
-      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
-      var img=new Image();
-      img.onload=function(){
-        var c=document.createElement('canvas');c.width=w;c.height=h;
-        c.getContext('2d').drawImage(img,0,0);
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.onerror=function(){
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.src=svgUrl;
-    }catch(err){
-      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-    }
-  });
-})();
-</script></body>
+</body>
 </html>

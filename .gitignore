@@ -1,0 +1,6 @@
+# Design specs, plans and planning scratch - kept local, never committed.
+docs/superpowers/
+.planning/
+
+# Playwright / tooling output
+.playwright-mcp/

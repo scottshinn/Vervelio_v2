@@ -1,5 +1,5 @@
 /* ============================================
-   VERVELIO — Design Tokens & Component Styles
+   VERVELIO - Design Tokens & Component Styles
    Three modes: green (terminal), black (dark), white (light)
    ============================================ */
 
@@ -48,7 +48,7 @@
 }
 
 /* ===========================================
-   GREEN MODE (DEFAULT) — Terminal Aesthetic
+   GREEN MODE (DEFAULT) - Terminal Aesthetic
    =========================================== */
 [data-theme="green"] {
   --color-bg: #0a0a0a;
@@ -68,7 +68,7 @@
 }
 
 /* ===========================================
-   BLACK MODE — Minimal Dark
+   BLACK MODE - Minimal Dark
    =========================================== */
 [data-theme="black"] {
   --color-bg: #0e0e0e;
@@ -88,7 +88,7 @@
 }
 
 /* ===========================================
-   WHITE MODE — Clean Light
+   WHITE MODE - Clean Light
    =========================================== */
 [data-theme="white"] {
   --color-bg: #f5f5f0;
@@ -509,7 +509,7 @@ body {
 }
 
 /* ===========================================
-   WHAT WE DO — Cards
+   WHAT WE DO - Cards
    =========================================== */
 .what-grid {
   display: grid;
@@ -885,5 +885,388 @@ body {
   .theme-btn:active {
     color: var(--color-accent);
     background: var(--color-glow-strong);
+  }
+}
+
+/* ===========================================
+   SECTION INTRO (shared)
+   =========================================== */
+.section-intro {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  max-width: 62ch;
+  margin-top: calc(-1 * var(--space-4));
+  margin-bottom: var(--space-10);
+}
+
+/* ===========================================
+   PRODUCTS
+   =========================================== */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--space-12), 7vw, var(--space-24));
+}
+
+.product {
+  display: grid;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 880px) {
+  .product {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: var(--space-10);
+  }
+  .product--reverse .product-media {
+    order: 2;
+  }
+}
+
+/* --- media panel --- */
+.product-media {
+  min-width: 0;
+}
+
+.stopmotion {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface-2);
+  transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+
+.sm-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  /* Deliberate hard cut - stop-motion reads as discrete frames, never a crossfade. */
+}
+
+.sm-frame--active {
+  opacity: 1;
+}
+
+.stopmotion::after {
+  /* Ties the imagery into the terminal aesthetic without touching the source frames. */
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, var(--scanline-opacity)) 2px,
+    rgba(0, 0, 0, var(--scanline-opacity)) 4px
+  );
+}
+
+[data-theme="green"] .stopmotion {
+  box-shadow: 0 0 30px var(--color-glow), 0 0 60px var(--color-glow);
+}
+
+.product:hover .stopmotion {
+  border-color: var(--color-border-bright);
+}
+
+.product-caption {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  letter-spacing: 0.04em;
+  margin-top: var(--space-3);
+}
+
+/* --- body --- */
+.product-body {
+  min-width: 0;
+}
+
+.product-stage {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+}
+
+.product-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-text-faint);
+  margin-bottom: var(--space-5);
+}
+
+.product-link:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.product-link-arrow {
+  transition: transform var(--transition-interactive);
+}
+
+.product-link:hover .product-link-arrow {
+  transform: translateX(3px);
+}
+
+.product-status {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  border: 1px solid var(--color-border-bright);
+  color: var(--color-accent);
+  background: var(--color-glow-strong);
+  margin-bottom: var(--space-5);
+}
+
+.product-thesis {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.45;
+  margin-bottom: var(--space-4);
+}
+
+.product-desc {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.75;
+  margin-bottom: var(--space-5);
+}
+
+.product-facts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.product-facts li {
+  position: relative;
+  padding-left: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+}
+
+.product-facts li::before {
+  content: '\2013';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+/* ===========================================
+   DEVELOPMENT PIPELINE
+   =========================================== */
+.pipeline-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2);
+}
+
+.pipeline-head .process-ts {
+  margin-bottom: 0;
+}
+
+.status-pill {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-bright);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.status-pill--building {
+  color: var(--color-accent);
+  background: var(--color-glow-strong);
+}
+
+.status-pill--design {
+  color: var(--color-text-faint);
+}
+
+
+/* ===========================================
+   HEADER NAV LINKS
+   =========================================== */
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-1);
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.mobile-nav-links a {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+}
+
+.mobile-nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* ===========================================
+   SOUND CONTROL (header, top right)
+   =========================================== */
+.sound-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sound-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px hit area on touch, matching the hamburger, without looking oversized. */
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  transition: color var(--transition-interactive), background var(--transition-interactive),
+              border-color var(--transition-interactive);
+}
+
+.sound-toggle:hover {
+  color: var(--color-text);
+  border-color: var(--color-border-bright);
+  background: var(--color-glow-strong);
+}
+
+.sound-toggle[aria-pressed="true"] {
+  color: var(--color-accent);
+  border-color: var(--color-border-bright);
+  background: var(--color-glow-strong);
+}
+
+.sound-icon { flex-shrink: 0; }
+
+/* Show the icon that matches the current state. */
+.sound-icon--on { display: none; }
+.sound-icon--off { display: block; }
+.sound-toggle[aria-pressed="true"] .sound-icon--on { display: block; }
+.sound-toggle[aria-pressed="true"] .sound-icon--off { display: none; }
+
+/* --- one-time hint --- */
+.sound-hint {
+  position: absolute;
+  top: calc(100% + var(--space-3));
+  right: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-bright);
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 24px oklch(0 0 0 / 0.35);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+}
+
+.sound-hint.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Little pointer up toward the button. */
+.sound-hint::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-surface-2);
+  border-left: 1px solid var(--color-border-bright);
+  border-top: 1px solid var(--color-border-bright);
+  transform: rotate(45deg);
+}
+
+.sound-hint-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--color-text-faint);
+}
+
+.sound-hint-close:hover {
+  color: var(--color-text);
+  background: var(--color-glow-strong);
+}
+
+@media (max-width: 640px) {
+  .header-nav { gap: var(--space-2); }
+  /* Keep the hint on screen on narrow viewports. */
+  .sound-hint {
+    right: -8px;
+    font-size: 0.7rem;
   }
 }
