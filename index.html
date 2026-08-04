@@ -21,8 +21,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="./assets/og-cover.jpg">
   <meta name="theme-color" content="#0a0a0a">
-  <link rel="stylesheet" href="./base.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./base.css?v=2">
+  <link rel="stylesheet" href="./style.css?v=5">
 </head>
 <body>
   <a href="#main" class="sr-only skip-link">Skip to content</a>
@@ -65,7 +65,7 @@
             <svg class="sound-icon sound-icon--off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
           </button>
           <div class="sound-hint" id="soundHint" role="status" hidden>
-            <span>Sound is on &mdash; tap to mute</span>
+            <span class="sound-hint-text">Sound is on &mdash; tap to mute</span>
             <button class="sound-hint-close" type="button" aria-label="Dismiss">&times;</button>
           </div>
         </div>
@@ -290,6 +290,7 @@
                 <li>Groups the same complaint together however differently people phrase it</li>
                 <li>Refreshes itself around the clock, so nothing on the list is stale</li>
               </ul>
+              <p class="product-focus">Demand signals &middot; Problem clustering &middot; ICP &middot; Product-market fit</p>
             </div>
           </article>
 
@@ -297,20 +298,20 @@
           <article class="product product--reverse">
             <div class="product-media">
               <div class="stopmotion" data-seq="weft" aria-hidden="true">
-                <img class="sm-frame sm-frame--active" src="./assets/stopmotion/weft-01.webp?v=2" width="1280" height="714" alt="" decoding="async" fetchpriority="low">
-                <img class="sm-frame" data-src="./assets/stopmotion/weft-02.webp?v=2" width="1280" height="714" alt="" decoding="async">
-                <img class="sm-frame" data-src="./assets/stopmotion/weft-03.webp?v=2" width="1280" height="714" alt="" decoding="async">
-                <img class="sm-frame" data-src="./assets/stopmotion/weft-04.webp?v=2" width="1280" height="714" alt="" decoding="async">
-                <img class="sm-frame" data-src="./assets/stopmotion/weft-05.webp?v=2" width="1280" height="714" alt="" decoding="async">
-                <img class="sm-frame" data-src="./assets/stopmotion/weft-06.webp?v=2" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame sm-frame--active" src="./assets/stopmotion/weft-01.webp?v=4" width="1280" height="714" alt="" decoding="async" fetchpriority="low">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-02.webp?v=4" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-03.webp?v=4" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-04.webp?v=4" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-05.webp?v=4" width="1280" height="714" alt="" decoding="async">
+                <img class="sm-frame" data-src="./assets/stopmotion/weft-06.webp?v=4" width="1280" height="714" alt="" decoding="async">
               </div>
-              <p class="product-caption">Separate threads, one cloth.</p>
+              <p class="product-caption">It tidied itself.</p>
             </div>
             <div class="product-body">
               <div class="product-stage">[STAGE_03] &middot; BUILD</div>
-              <h2 class="product-name">Weft</h2>
+              <h2 class="product-name">Dev Djinn</h2>
               <p class="product-thesis">Your work, woven into one map.</p>
-              <p class="product-desc">Your real work is scattered and mostly invisible &mdash; half-finished branches on your laptop, decisions buried in a chat that already ended, notes in five places, and nothing tying a broken deploy back to the change that caused it. Weft watches quietly in the background and weaves all of it into one map you can search, share, and pick back up tomorrow.</p>
+              <p class="product-desc">Your real work is scattered and mostly invisible &mdash; half-finished branches on your laptop, decisions buried in a chat that already ended, notes in five places, and nothing tying a broken deploy back to the change that caused it. Dev Djinn watches quietly in the background and weaves all of it into one map you can search, share, and pick back up tomorrow.</p>
               <ul class="product-facts" role="list">
                 <li>Shows the work actually in progress, not just what has been finished and filed</li>
                 <li>Keeps a readable record of what an AI assistant did and why, long after the chat is gone</li>
@@ -318,6 +319,7 @@
                 <li>Tells you what has gone quiet, what is overdue, and what just broke</li>
                 <li>Runs on your own machine &mdash; your code never has to leave it</li>
               </ul>
+              <p class="product-focus">Developer experience &middot; Context handoff &middot; Local-first</p>
             </div>
           </article>
 
@@ -349,6 +351,7 @@
                 <li>Finds new clients, audits their site, and estimates what they already spend on ads</li>
                 <li>Client-ready reports every month, without you rewriting them</li>
               </ul>
+              <p class="product-focus">SEO &middot; AEO &middot; GEO &middot; E-E-A-T &middot; Attribution</p>
             </div>
           </article>
 
@@ -376,6 +379,7 @@
                 <li>Two extra jobs a day is around $1,600 a month of work that would have been missed</li>
                 <li>One tap to book, on the phone people already have</li>
               </ul>
+              <p class="product-focus">Route density &middot; Demand aggregation &middot; Same-day fulfilment</p>
             </div>
           </article>
 
@@ -399,11 +403,20 @@
 
             <div class="process-step pipeline-step">
               <div class="pipeline-head">
+                <span class="process-ts">[STARTED]</span>
+                <span class="status-pill status-pill--building">BUILDING</span>
+              </div>
+              <span class="process-name">KrispyVibes &mdash; event solutions</span>
+              <p class="process-desc">Apps that let a whole group share the moment &mdash; weddings, corporate events, training, cruises. Guests scan a code on the table, then take photos, record short video toasts and leave voice notes, and it all collects into one shared album the hosts keep. Event planning and management software sits behind it, brandable as your own if you already run events.</p>
+            </div>
+
+            <div class="process-step pipeline-step">
+              <div class="pipeline-head">
                 <span class="process-ts">[QUEUED]</span>
                 <span class="status-pill status-pill--design">DESIGN</span>
               </div>
-              <span class="process-name">Accounting &amp; payroll</span>
-              <p class="process-desc">Scoped, in design. No code committed yet.</p>
+              <span class="process-name">Accounting Hero</span>
+              <p class="process-desc">Accounting and payroll. Scoped, in design. No code committed yet.</p>
             </div>
 
             <div class="process-step pipeline-step">
@@ -499,6 +512,6 @@
   <audio data-layer="woofback" src="./assets/audio/layer-woofback.mp3?v=3" loop preload="none"></audio>
   <audio data-layer="dooryard" src="./assets/audio/layer-dooryard.mp3?v=2" loop preload="none"></audio>
 
-  <script src="./app.js" defer></script>
+  <script src="./app.js?v=3" defer></script>
 </body>
 </html>

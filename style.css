@@ -1149,6 +1149,12 @@ body {
   color: var(--color-text-faint);
 }
 
+/* Work underway, as distinct from DESIGN (not started). */
+.status-pill--building {
+  color: var(--color-accent);
+  background: var(--color-glow-strong);
+}
+
 
 /* ===========================================
    HEADER NAV LINKS
@@ -1424,4 +1430,23 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* ===========================================
+   PRODUCT FOCUS LINE
+   Positioning language, not implementation. A reader who knows the field reads
+   "SEO / AEO / GEO" and instantly knows what the product competes on - which the
+   prose above takes four sentences to say. Deliberately quiet so it does not
+   compete with the thesis.
+   =========================================== */
+.product-focus {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  max-width: none;
 }

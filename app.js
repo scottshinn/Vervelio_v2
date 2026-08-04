@@ -365,12 +365,21 @@
     function startTrack(name) {
       var el = layers[name];
       if (!el) return;
-      if (el.paused) {
-        el.currentTime = 0;
-        var p = el.play();
-        if (p && typeof p.catch === 'function') p.catch(function () {});
-      }
-      fade(el, LAYER_VOLUME);
+      if (!el.paused) { fade(el, LAYER_VOLUME); return; }
+      el.currentTime = 0;
+      el.volume = 0;
+      var p = el.play();
+      if (!p || typeof p.then !== 'function') { fade(el, LAYER_VOLUME); return; }
+      p.then(function () {
+        // Ramp up ONLY once playback has actually begun. Fading a refused or
+        // interrupted element leaves it paused at full volume - silent, but it
+        // reports as "playing at 0.6" to anything inspecting it.
+        if (active === name) fade(el, LAYER_VOLUME);
+      }).catch(function () {
+        el.volume = 0;
+        if (active === name) active = null;
+        showBlockedHint();
+      });
     }
 
     function stopTrack(name) {
@@ -410,13 +419,33 @@
       setTimeout(function () { hint.hidden = true; }, 400);
     }
 
-    function maybeShowHint() {
-      if (!hint || readPref(HINT_KEY) === 'yes') return;
-      writePref(HINT_KEY, 'yes');
+    // Two states, because a visitor who only ever SCROLLS never authorises audio:
+    // browsers deliberately exclude scroll/wheel from the gestures that permit
+    // playback. Without the 'blocked' message such a visitor sees a speaker icon
+    // showing 'on' while hearing nothing, with no explanation. So when playback is
+    // armed but refused, the hint becomes an invitation instead of a status.
+    function showHint(message, opts) {
+      if (!hint) return;
+      var persistent = opts && opts.persistent;
+      if (!persistent && readPref(HINT_KEY) === 'yes') return;
+      if (!persistent) writePref(HINT_KEY, 'yes');
+      hint.querySelector('.sound-hint-text').textContent = message;
+      if (hintTimer) { clearTimeout(hintTimer); hintTimer = null; }
       hint.hidden = false;
       // Next frame, so the transition runs instead of snapping.
       requestAnimationFrame(function () { hint.classList.add('is-visible'); });
-      hintTimer = setTimeout(hideHint, 6000);
+      hintTimer = setTimeout(hideHint, persistent ? 9000 : 6000);
+    }
+
+    function maybeShowHint() {
+      showHint('Sound is on — tap to mute');
+    }
+
+    function showBlockedHint() {
+      // Not gated on HINT_KEY: this one is an actionable invitation, and a visitor
+      // who has not yet enabled sound has not seen its outcome.
+      if (readPref(SOUND_KEY) === 'off') return;
+      showHint('Click anywhere for sound', { persistent: true });
     }
 
     if (hint) {
@@ -443,22 +472,28 @@
       });
     }
 
+    // Probe ONE element, not all four. Autoplay permission is per-document, so a
+    // single successful play() authorises every track. Playing and pausing all
+    // four raced the first real startTrack(): its play() got interrupted, the
+    // rejection was swallowed, and the track sat paused at full volume.
     function unlock() {
       if (unlocked) return Promise.resolve(true);
-      var attempts = Object.keys(layers).map(function (name) {
-        var el = layers[name];
-        el.volume = 0;
-        var p = el.play();
-        if (p && typeof p.then === 'function') {
-          return p.then(function () { el.pause(); return true; })
-                  .catch(function () { return false; });
-        }
-        el.pause();
+      var probe = layers[Object.keys(layers)[0]];
+      if (!probe) return Promise.resolve(false);
+      probe.volume = 0;
+      var p = probe.play();
+      if (!p || typeof p.then !== 'function') {
+        probe.pause();
+        unlocked = true;
         return Promise.resolve(true);
-      });
-      return Promise.all(attempts).then(function (results) {
-        unlocked = results.some(Boolean);
-        return unlocked;
+      }
+      return p.then(function () {
+        probe.pause();
+        unlocked = true;
+        return true;
+      }).catch(function () {
+        unlocked = false;
+        return false;
       });
     }
 
@@ -467,10 +502,13 @@
     });
 
     // Some browsers (and returning visitors with prior engagement) allow audio
-    // straight away - try once so those visitors need no gesture at all.
+    // straight away - try once so those visitors need no gesture at all. If it is
+    // refused, invite the visitor to click, because scrolling alone never will
+    // authorise playback and they would otherwise get silence with no explanation.
     if (enabled) {
       unlock().then(function (ok) {
         if (ok) { updateMix(); maybeShowHint(); }
+        else showBlockedHint();
       });
     }
 
