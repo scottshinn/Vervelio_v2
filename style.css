@@ -7,8 +7,8 @@
 :root {
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  --text-lg: clamp(1.0625rem, 0.95rem + 0.6vw, 1.3125rem);
   --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
   --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
 
@@ -57,8 +57,8 @@
   --color-border: #1a3a1a;
   --color-border-bright: #2a5a2a;
   --color-text: #00cc00;
-  --color-text-muted: #008800;
-  --color-text-faint: #005500;
+  --color-text-muted: #009800;
+  --color-text-faint: #009000;
   --color-accent: #00ff41;
   --color-accent-dim: #00cc00;
   --color-glow: rgba(0, 255, 65, 0.08);
@@ -78,7 +78,7 @@
   --color-border-bright: #3a3a3a;
   --color-text: #d4d4d4;
   --color-text-muted: #888888;
-  --color-text-faint: #555555;
+  --color-text-faint: #7d7d7d;
   --color-accent: #ffffff;
   --color-accent-dim: #cccccc;
   --color-glow: rgba(255, 255, 255, 0.04);
@@ -98,7 +98,7 @@
   --color-border-bright: #b0b0a8;
   --color-text: #1a1a1a;
   --color-text-muted: #6a6a6a;
-  --color-text-faint: #9a9a9a;
+  --color-text-faint: #6d6d6d;
   --color-accent: #1a1a1a;
   --color-accent-dim: #333333;
   --color-glow: rgba(0, 0, 0, 0.03);
@@ -484,7 +484,7 @@ body {
    SECTIONS
    =========================================== */
 .section {
-  padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4);
+  padding: clamp(var(--space-10), 5vw, var(--space-16)) var(--space-4);
 }
 
 @media (min-width: 641px) {
@@ -501,11 +501,16 @@ body {
 
 .section-label {
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-text-faint);
-  letter-spacing: 0.1em;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.18em;
   margin-bottom: var(--space-8);
   text-transform: uppercase;
+}
+
+[data-theme="green"] .section-label {
+  text-shadow: 0 0 12px var(--color-glow-strong);
 }
 
 /* ===========================================
@@ -518,11 +523,8 @@ body {
 
 @media (min-width: 768px) {
   .what-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
-  }
-  .what-card--large {
-    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-4);
   }
 }
 
@@ -536,7 +538,7 @@ body {
 
 @media (min-width: 641px) {
   .what-card {
-    padding: var(--space-8);
+    padding: var(--space-6);
   }
 }
 
@@ -556,7 +558,7 @@ body {
 
 .what-card h2 {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: 700;
   color: var(--color-text);
   margin-bottom: var(--space-4);
@@ -643,7 +645,53 @@ body {
 
 .mission-quote {
   margin-top: var(--space-6);
+  position: relative;
 }
+
+/* The 'glitch glyph', rebuilt on purpose. It began as an encoding accident:
+   a control character that Chrome drew as a missing-glyph hex box beside a
+   stray letter. The user liked it, so this recreates the same shape
+   deliberately - a thin outlined box holding the section word in tiny
+   vertical type (::before), with the big faint initial beside it (::after).
+   Unlike the accident, this renders identically in every browser. */
+.mission-quote::before {
+  position: absolute;
+  top: -2.4rem;
+  left: -0.3rem;
+  height: 3.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.25rem 0.1rem;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.mission-quote::after {
+  position: absolute;
+  top: -2.5rem;
+  left: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--color-accent);
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.mission-block .mission-quote::before { content: 'MISSION'; }
+.mission-block .mission-quote::after { content: 'M'; }
+
+.vision-block .mission-quote::before { content: 'VISION'; }
+.vision-block .mission-quote::after { content: 'V'; }
 
 .mission-quote p {
   font-family: var(--font-display);
@@ -1032,19 +1080,6 @@ body {
   transform: translateX(3px);
 }
 
-.product-status {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
-  padding: var(--space-1) var(--space-3);
-  border-radius: 999px;
-  border: 1px solid var(--color-border-bright);
-  color: var(--color-accent);
-  background: var(--color-glow-strong);
-  margin-bottom: var(--space-5);
-}
-
 .product-thesis {
   font-family: var(--font-display);
   font-size: var(--text-lg);
@@ -1077,7 +1112,7 @@ body {
 }
 
 .product-facts li::before {
-  content: '\2013';
+  content: '–';
   position: absolute;
   left: 0;
   color: var(--color-accent);
@@ -1108,11 +1143,6 @@ body {
   border: 1px solid var(--color-border-bright);
   color: var(--color-text-muted);
   white-space: nowrap;
-}
-
-.status-pill--building {
-  color: var(--color-accent);
-  background: var(--color-glow-strong);
 }
 
 .status-pill--design {
@@ -1268,5 +1298,130 @@ body {
   .sound-hint {
     right: -8px;
     font-size: 0.7rem;
+  }
+}
+
+/* ===========================================
+   BUTTONS (hero + CTA)
+   =========================================== */
+.hero-actions,
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-bright);
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-dim);
+  border-color: var(--color-accent-dim);
+}
+
+[data-theme="green"] .btn--primary {
+  box-shadow: 0 0 24px var(--color-glow-strong);
+}
+
+.btn--ghost {
+  color: var(--color-text);
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-glow);
+}
+
+/* Hero action row takes part in the staged reveal like its sibling lines. */
+.hero .hero-actions {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.hero .hero-actions.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+/* ===========================================
+   SCROLL CUE (hero)
+   =========================================== */
+.scroll-cue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: var(--space-8) auto 0;
+  color: var(--color-text-faint);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  animation: cue-bob 2.2s var(--ease-out) infinite;
+}
+
+.scroll-cue:hover {
+  color: var(--color-accent);
+  border-color: var(--color-border-bright);
+}
+
+@keyframes cue-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ===========================================
+   ACTIVE NAV STATE
+   =========================================== */
+.nav-link.is-active {
+  color: var(--color-accent);
+}
+
+/* ===========================================
+   FOOTER NAV
+   =========================================== */
+.footer-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.footer-nav a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.footer-nav a:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
