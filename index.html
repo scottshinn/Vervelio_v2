@@ -24,6 +24,46 @@
   <link rel="stylesheet" href="./base.css?v=2">
   <link rel="stylesheet" href="./style.css?v=5">
 
+  <!-- Organization entity: gives AI/search engines a distinct anchor for "Vervelio" (disambiguates from
+       look-alike names) via sameAs, founder, foundingDate and address. Mirrors the identity the blog emits. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://vervelio.com/#org",
+    "name": "Vervelio",
+    "legalName": "Vervelio",
+    "url": "https://vervelio.com",
+    "logo": "https://vervelio.com/logo-black.jpg",
+    "description": "Vervelio is a Detroit-based software development studio and SaaS company that builds software products, ships AI-first engineering, and matches technical co-founders with business founders.",
+    "foundingDate": "2026-03-30",
+    "founder": {
+      "@type": "Person",
+      "name": "Scott Shinn",
+      "jobTitle": "Founder",
+      "sameAs": "https://scottshinn.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Detroit",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@vervelio.com",
+      "telephone": "+12489244527",
+      "contactType": "customer support"
+    },
+    "knowsAbout": ["Software development", "SaaS", "Co-founder matching", "Fractional CTO", "MVP development", "Startup engineering"],
+    "sameAs": [
+      "https://www.linkedin.com/company/vervelio/",
+      "https://github.com/Vervelio-Labs",
+      "https://vervelio.com/blog"
+    ]
+  }
+  </script>
+
   <!-- Microsoft Clarity (AI-citation + behavior analytics) -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
