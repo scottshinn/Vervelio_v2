@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="./assets/og-cover.jpg">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="stylesheet" href="./base.css?v=2">
-  <link rel="stylesheet" href="./style.css?v=5">
+  <link rel="stylesheet" href="./style.css?v=6">
 
   <!-- Organization entity: gives AI/search engines a distinct anchor for "Vervelio" (disambiguates from
        look-alike names) via sameAs, founder, foundingDate and address. Mirrors the identity the blog emits. -->
@@ -110,19 +110,6 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
             </button>
           </span>
-        </div>
-
-        <!-- Sound control. Stays outside .nav-links so it remains reachable on
-             mobile, where the nav collapses into the menu. -->
-        <div class="sound-wrap">
-          <button class="sound-toggle" id="soundToggle" aria-pressed="true" aria-label="Turn off ambient sound" title="Ambient sound">
-            <svg class="sound-icon sound-icon--on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-            <svg class="sound-icon sound-icon--off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-          </button>
-          <div class="sound-hint" id="soundHint" role="status" hidden>
-            <span class="sound-hint-text">Sound is on &mdash; tap to mute</span>
-            <button class="sound-hint-close" type="button" aria-label="Dismiss">&times;</button>
-          </div>
         </div>
 
         <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -618,15 +605,6 @@
     </div>
   </footer>
 
-  <!-- AMBIENT SOUND - armed ON by default, but browsers refuse audio without a
-       user gesture, so playback begins on the visitor's first click/tap/keypress.
-       One quiet texture per diorama, only while that product is on screen, and
-       only ever one at a time. An explicit opt-out is remembered. -->
-  <audio data-layer="nidamind" src="./assets/audio/layer-nidamind.mp3?v=3" loop preload="none"></audio>
-  <audio data-layer="weft" src="./assets/audio/layer-weft.mp3?v=4" loop preload="none"></audio>
-  <audio data-layer="woofback" src="./assets/audio/layer-woofback.mp3?v=3" loop preload="none"></audio>
-  <audio data-layer="dooryard" src="./assets/audio/layer-dooryard.mp3?v=2" loop preload="none"></audio>
-
-  <script src="./app.js?v=3" defer></script>
+  <script src="./app.js?v=4" defer></script>
 </body>
 </html>
