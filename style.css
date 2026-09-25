@@ -1342,3 +1342,38 @@ body {
   color: var(--color-text-muted);
   max-width: none;
 }
+
+/* ===========================================
+   BLACK MODE - TRAFFIC-LIGHT ACCENTS
+   The terminal window dots (red / yellow / green) become the colour system:
+   green = go / live, yellow = labels & work in progress, red = not started.
+   =========================================== */
+[data-theme="black"] {
+  --tl-red: #ff5f56;
+  --tl-yellow: #ffbd2e;
+  --tl-green: #27c93f;
+}
+[data-theme="black"] .prompt,
+[data-theme="black"] .cursor-blink { color: var(--tl-green); }
+[data-theme="black"] .cmd { color: var(--tl-yellow); }
+[data-theme="black"] .section-label { color: var(--tl-yellow); }
+[data-theme="black"] .process-ts { color: var(--tl-green); }
+[data-theme="black"] .product-stage { color: var(--tl-yellow); }
+[data-theme="black"] .product-link { color: var(--tl-green); }
+[data-theme="black"] .product-link:hover { color: #5ee872; }
+[data-theme="black"] .product-facts li::before { color: var(--tl-green); }
+[data-theme="black"] .nav-link.is-active { color: var(--tl-green); }
+[data-theme="black"] .nav-link:hover { color: var(--tl-yellow); }
+[data-theme="black"] .cta-link { color: var(--tl-green); }
+[data-theme="black"] .btn--primary:hover { background: var(--tl-green); border-color: var(--tl-green); color: #0e0e0e; }
+[data-theme="black"] .status-pill--building {
+  color: var(--tl-yellow);
+  border-color: rgba(255, 189, 46, 0.55);
+  background: rgba(255, 189, 46, 0.1);
+}
+[data-theme="black"] .status-pill--design {
+  color: var(--tl-red);
+  border-color: rgba(255, 95, 86, 0.45);
+}
+[data-theme="black"] .pipeline-step:has(.status-pill--building) .process-ts { color: var(--tl-yellow); }
+[data-theme="black"] .pipeline-step:has(.status-pill--design) .process-ts { color: var(--tl-red); }
