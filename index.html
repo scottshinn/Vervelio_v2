@@ -29,43 +29,198 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://vervelio.com/#org",
-    "name": "Vervelio",
-    "legalName": "Vervelio",
-    "url": "https://vervelio.com",
-    "logo": "https://vervelio.com/logo-black.jpg",
-    "description": "Vervelio is a Detroit-based software development studio and SaaS company that builds software products, ships AI-first engineering, and matches technical co-founders with business founders.",
-    "foundingDate": "2026-03-30",
-    "founder": {
-      "@type": "Person",
-      "name": "Scott Shinn",
-      "jobTitle": "Founder",
-      "sameAs": "https://scottshinn.com"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Detroit",
-      "addressRegion": "MI",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "hello@vervelio.com",
-      "telephone": "+12489244527",
-      "contactType": "customer support"
-    },
-    "knowsAbout": ["Software development", "SaaS", "Co-founder matching", "Fractional CTO", "MVP development", "Startup engineering"],
-    "subOrganization": {
-      "@type": "Organization",
-      "@id": "https://verveliolabs.com/#org",
-      "name": "Vervelio Labs",
-      "url": "https://verveliolabs.com/"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/vervelio/",
-      "https://github.com/Vervelio-Labs",
-      "https://vervelio.com/blog"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vervelio.com/#org",
+        "name": "Vervelio",
+        "legalName": "Vervelio",
+        "url": "https://vervelio.com",
+        "logo": "https://vervelio.com/logo-black.jpg",
+        "description": "Vervelio is a Detroit-based software development studio and SaaS company that builds software products, ships AI-first engineering, and matches technical co-founders with business founders.",
+        "foundingDate": "2026-03-30",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://scottshinn.com/#person",
+          "name": "Scott Shinn",
+          "jobTitle": "Founder",
+          "url": "https://scottshinn.com",
+          "sameAs": "https://scottshinn.com"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Detroit",
+          "addressRegion": "MI",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "hello@vervelio.com",
+          "telephone": "+12489244527",
+          "contactType": "customer support"
+        },
+        "knowsAbout": [
+          "Software development",
+          "SaaS",
+          "Agentic AI",
+          "Generative AI",
+          "AI governance",
+          "Co-founder matching",
+          "Fractional CTO",
+          "MVP development",
+          "Startup engineering",
+          "AI red teaming",
+          "Cold email outreach",
+          "UGC video production"
+        ],
+        "subOrganization": {
+          "@type": "Organization",
+          "@id": "https://verveliolabs.com/#org",
+          "name": "Vervelio Labs",
+          "url": "https://verveliolabs.com/",
+          "parentOrganization": {
+            "@id": "https://vervelio.com/#org"
+          }
+        },
+        "owns": [
+          {
+            "@id": "https://vervelio.com/#nidamind"
+          },
+          {
+            "@id": "https://vervelio.com/#caelioncrm"
+          },
+          {
+            "@id": "https://vervelio.com/#devdjinn"
+          },
+          {
+            "@id": "https://vervelio.com/#thewoofback"
+          },
+          {
+            "@id": "https://vervelio.com/#dooryard"
+          },
+          {
+            "@id": "https://vervelio.com/#mobouros"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/vervelio/",
+          "https://github.com/Vervelio-Labs",
+          "https://vervelio.com/blog"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vervelio.com/#website",
+        "url": "https://vervelio.com",
+        "name": "Vervelio",
+        "publisher": {
+          "@id": "https://vervelio.com/#org"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://vervelio.com/#nidamind",
+        "name": "NidaMind",
+        "description": "Finds problems people repeatedly complain about in public and shows which ones are worth building, with the likely buyer and competitors.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "publisher": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "creator": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "url": "https://nidamind.com"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://vervelio.com/#caelioncrm",
+        "name": "CaelionCRM",
+        "description": "An agentic CRM that sends follow-ups, updates records and flags deals going cold inside the tools a team already uses.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "publisher": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "creator": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "url": "https://caelion.app",
+        "alternateName": "Caelion"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://vervelio.com/#devdjinn",
+        "name": "Dev Djinn",
+        "description": "A local-first developer tool that links branches, notes, tasks, AI assistant changes and deploys into one searchable map.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "publisher": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "creator": {
+          "@id": "https://vervelio.com/#org"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://vervelio.com/#thewoofback",
+        "name": "thewoofback.com",
+        "description": "A growth system that researches, writes and publishes content, tracks search rankings and AI assistant citations, captures leads and reports to clients. Includes Fieldwork for UGC video ads.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "publisher": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "creator": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "url": "https://thewoofback.com",
+        "hasPart": {
+          "@type": "SoftwareApplication",
+          "@id": "https://vervelio.com/#fieldwork",
+          "name": "Fieldwork",
+          "description": "Turns a brief into finished UGC video ads: script, cast, storyboard, generated shots, client approval and scheduled posting.",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Web",
+          "isPartOf": {
+            "@id": "https://vervelio.com/#thewoofback"
+          },
+          "creator": {
+            "@id": "https://vervelio.com/#org"
+          }
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://vervelio.com/#dooryard",
+        "name": "DoorYard",
+        "description": "Lets home-service crews already nearby offer a spare slot at a set price to neighbours, who book it with one tap.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "publisher": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "creator": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "url": "https://dooryardapp.com"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://vervelio.com/#mobouros",
+        "name": "mobouros",
+        "description": "Cold email outreach: unlimited sending inboxes with warm-up and rotation, multi-step sequences with A/B tests, a lead database, a unified reply inbox and an AI reply agent.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "publisher": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "creator": {
+          "@id": "https://vervelio.com/#org"
+        },
+        "url": "https://mobouros.com"
+      }
     ]
   }
   </script>
