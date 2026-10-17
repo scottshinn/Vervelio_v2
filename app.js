@@ -23,7 +23,7 @@
     });
   }
 
-  // Initialize theme - restore the visitor's last choice, else default to green
+  // Initialize theme - restore the visitor's last choice, else default to black (dark)
   var STORED_THEME_KEY = 'vervelio:theme';
   var VALID_THEMES = ['green', 'black', 'white'];
   var savedTheme = null;
@@ -32,7 +32,7 @@
   } catch (e) {
     // Private mode / storage disabled - fall through to the default.
   }
-  setTheme(VALID_THEMES.indexOf(savedTheme) !== -1 ? savedTheme : 'green');
+  setTheme(VALID_THEMES.indexOf(savedTheme) !== -1 ? savedTheme : 'black');
 
   function closeMobileNav() {
     var overlay = document.getElementById('mobileNav');

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="green">
+<html lang="en" data-theme="black">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vervelio | Build What Matters</title>
-  <meta name="description" content="Vervelio is a novel software development firm that creates SaaS solutions, matches technical founders with business minds, and ships AI-powered products at speed. Based in Detroit, working globally.">
+  <meta name="description" content="Vervelio is a Detroit software studio. We build and ship our own products, pair engineers with business founders, and give new companies a working stack from day one.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Vervelio | Build What Matters">
-  <meta property="og:description" content="SaaS development, co-founder matching, and AI-first engineering. Detroit-born, globally distributed.">
+  <meta property="og:description" content="A Detroit software studio with seven products of its own. We also pair engineers with business founders.">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="./assets/og-cover.jpg">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="stylesheet" href="./base.css?v=2">
-  <link rel="stylesheet" href="./style.css?v=8">
+  <link rel="stylesheet" href="./style.css?v=12">
 
   <!-- Organization entity: gives AI/search engines a distinct anchor for "Vervelio" (disambiguates from
        look-alike names) via sameAs, founder, foundingDate and address. Mirrors the identity the blog emits. -->
@@ -98,7 +98,8 @@
       <nav class="header-nav" aria-label="Main navigation">
         <div class="nav-links">
           <a class="nav-link" href="#products">Products</a>
-          <a class="nav-link" href="#pipeline">Pipeline</a>
+          <a class="nav-link" href="#what">What we do</a>
+          <a class="nav-link" href="#bench">Bench</a>
           <a class="nav-link" href="#contact">Contact</a>
           <span class="nav-prefix">&gt;</span>
           <span class="theme-switcher">
@@ -128,7 +129,8 @@
     <div class="mobile-nav-content">
       <nav class="mobile-nav-links" aria-label="Sections">
         <a href="#products">Products</a>
-        <a href="#pipeline">Pipeline</a>
+        <a href="#what">What we do</a>
+        <a href="#bench">Bench</a>
         <a href="#contact">Contact</a>
       </nav>
       <span class="theme-switcher-mobile">
@@ -170,10 +172,13 @@
               <span class="prompt">$</span> <span class="cmd">echo</span> $LOCATION
             </p>
             <p class="terminal-output" data-delay="1600">
-              Detroit, Michigan. Working with anyone, anywhere, who has the right passion.
+              Detroit, Michigan. We work with people anywhere.
             </p>
-            <p class="terminal-line" data-delay="2000">
-              <span class="prompt">$</span> <span class="cursor-blink">_</span>
+            <p class="terminal-line" data-delay="1800">
+              <span class="prompt">$</span> <span class="cmd">ls</span> products/
+            </p>
+            <p class="terminal-output hero-ls" data-delay="2000">
+              <a href="#p-nidamind">nidamind</a> <a href="#p-caelion">caelioncrm</a> <a href="#p-devdjinn">devdjinn</a> <a href="#p-woofback">thewoofback</a> <a href="#p-dooryard">dooryard</a> <a href="#p-mobouros">mobouros</a> <a href="#p-labs">labs</a>
             </p>
             <div class="hero-actions" data-delay="2400">
               <a class="btn btn--primary" href="#products">See the products <span aria-hidden="true">&rarr;</span></a>
@@ -188,224 +193,103 @@
       <div class="scanline-overlay" aria-hidden="true"></div>
     </section>
 
-    <!-- WHAT WE DO -->
-    <section class="section section-what">
-      <div class="container">
-        <div class="section-label">// WHAT_WE_DO</div>
-        <div class="what-grid">
-          <div class="what-card">
-            <div class="card-tag">SaaS Pipeline</div>
-            <h2>We don't wait for clients. We build products.</h2>
-            <p>Vervelio operates its own SaaS pipeline, taking software products from first idea to launch. We own the entire lifecycle: ideation, architecture, engineering, deployment, and growth. Every product we launch sharpens the tooling our next one inherits.</p>
-          </div>
-          <div class="what-card">
-            <div class="card-tag">Co-Founder Matching</div>
-            <h2>Connecting builders with visionaries</h2>
-            <p>Technical minds who can code anything but lack business instinct. Business strategists with killer ideas but no way to build them. We find these people, pair them, and give them the technical foundation to move fast.</p>
-          </div>
-          <div class="what-card">
-            <div class="card-tag">Critical Tooling</div>
-            <h2>The 80% that every business needs</h2>
-            <p>Auth, billing, dashboards, notifications and analytics: the infrastructure every SaaS needs before it can stand out. We've built it. You inherit it. Your time-to-market compresses from months to weeks.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SPECIALIZATIONS -->
-    <section class="section section-spec">
-      <div class="container">
-        <div class="section-label">// SPECIALIZATIONS</div>
-        <div class="spec-grid">
-          <div class="spec-item">
-            <div class="spec-num">01</div>
-            <h3>Generative AI</h3>
-            <p>Production systems built on large language models, image generation and multimodal AI, shipped to real users with governance built in.</p>
-          </div>
-          <div class="spec-item">
-            <div class="spec-num">02</div>
-            <h3>Agentic AI</h3>
-            <p>Autonomous agent architectures that plan, execute, and iterate. We build agents that operate within defined safety boundaries while delivering outcomes humans can audit and trust.</p>
-          </div>
-          <div class="spec-item">
-            <div class="spec-num">03</div>
-            <h3>Governance Controls</h3>
-            <p>Every AI system we ship includes guardrails: rate limiting, content filtering, cost controls, audit trails, and human-in-the-loop checkpoints. Power without accountability is a liability.</p>
-          </div>
-          <div class="spec-item">
-            <div class="spec-num">04</div>
-            <h3>Frontier Data Models</h3>
-            <p>Data pipelines that ingest, transform and route data across distributed systems, so your AI works from the same facts as the rest of your business.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MISSION / VISION -->
-    <section class="section section-mission">
-      <div class="container">
-        <div class="mission-block">
-          <div class="section-label">// MISSION</div>
-          <blockquote class="mission-quote">
-            <p>To remove everything that stands between a good idea and shipped software. We build the infrastructure, find the right partners and move fast.</p>
-          </blockquote>
-        </div>
-        <div class="vision-block">
-          <div class="section-label">// VISION</div>
-          <blockquote class="mission-quote">
-            <p>A world where the best ideas win, whether or not their creator can code or close a deal. We're building the firm that makes technical and business talent interchangeable, and ships the products that prove it.</p>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW WE WORK -->
-    <section class="section section-process">
-      <div class="container">
-        <div class="section-label">// PROCESS</div>
-        <div class="process-terminal">
-          <div class="terminal-bar">
-            <span class="terminal-dot"></span>
-            <span class="terminal-dot"></span>
-            <span class="terminal-dot"></span>
-            <span class="terminal-title">pipeline.log</span>
-          </div>
-          <div class="terminal-body process-body">
-            <div class="process-step">
-              <span class="process-ts">[STAGE_01]</span>
-              <span class="process-name">Identify</span>
-              <p class="process-desc">Surface pain points, validate demand, assess technical feasibility. Kill bad ideas early. Protect good ones from premature optimization.</p>
-            </div>
-            <div class="process-step">
-              <span class="process-ts">[STAGE_02]</span>
-              <span class="process-name">Architect</span>
-              <p class="process-desc">Design the system. Select the stack. Map the data model. Define governance from day one, not after the breach. Inherit shared tooling.</p>
-            </div>
-            <div class="process-step">
-              <span class="process-ts">[STAGE_03]</span>
-              <span class="process-name">Build</span>
-              <p class="process-desc">Ship fast with our pre-built foundation. Auth, billing, monitoring and CI/CD are already done. Your team writes the code that differentiates.</p>
-            </div>
-            <div class="process-step">
-              <span class="process-ts">[STAGE_04]</span>
-              <span class="process-name">Launch</span>
-              <p class="process-desc">Deploy to production with monitoring, observability, and rollback. Real users on day one. Iterate based on data, not assumptions.</p>
-            </div>
-            <div class="process-step">
-              <span class="process-ts">[STAGE_05]</span>
-              <span class="process-name">Scale</span>
-              <p class="process-desc">Growth engineering, performance optimization, and expanding the product surface. The pipeline feeds back: every launch makes the next one faster.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- PRODUCTS -->
     <section class="section section-products" id="products">
       <div class="container">
-        <div class="section-label">// PRODUCTS</div>
-        <p class="section-intro">The proof of the process. Six products conceived and built in-house. Most have already shipped, and each has its own home where the full story lives. This is the shop window.</p>
+        <h2 class="section-label">Products</h2>
+        <p class="section-intro">Seven products, all built in-house. Each one has its own site with the full story.</p>
 
         <div class="product-list">
 
           <!-- NidaMind -->
-          <article class="product">
+          <article id="p-nidamind" class="product">
             <div class="product-media">
               <div class="stopmotion" data-seq="nidamind" aria-hidden="true">
                 <img class="sm-frame sm-frame--active" src="./assets/stopmotion/nidamind-still.webp?v=1" width="1280" height="714" alt="" decoding="async" loading="lazy">
               </div>
             </div>
             <div class="product-body">
-              <div class="product-stage">[STAGE_01] &middot; IDENTIFY</div>
+              <div class="product-stage">Stage 1 &middot; Identify</div>
               <h2 class="product-name">NidaMind</h2>
               <a class="product-link" href="https://nidamind.com" target="_blank" rel="noopener">nidamind.com <span class="product-link-arrow">&rarr;</span></a>
               <p class="product-thesis">Know what to build before you build it.</p>
-              <p class="product-desc">Most product ideas start as a hunch. NidaMind starts with evidence. It listens to what people are already complaining about in public, finds the complaints that keep repeating, and hands you the ones worth building, each with the problem spelled out, who has it, who is already trying to solve it, and where the gap is.</p>
+              <p class="product-desc">Most product ideas start as a hunch. NidaMind starts with evidence. It reads what people complain about in public, finds the complaints that keep coming back, and tells you which ones are worth building, who has the problem and who is already trying to fix it.</p>
               <ul class="product-facts" role="list">
-                <li>Ideas come from real conversations, not guesswork</li>
-                <li>Every idea arrives with its likely customer, its competitors, and a first plan to build it</li>
-                <li>Groups the same complaint together however differently people phrase it</li>
-                <li>Refreshes itself around the clock, so nothing on the list is stale</li>
+                <li>Ideas come from real complaints, not guesses</li>
+                <li>Each idea comes with its likely buyer, its competitors and a first build plan</li>
+                <li>Spots the same complaint however people word it</li>
+                <li>Updates around the clock</li>
               </ul>
-              <p class="product-focus">Demand signals &middot; Problem clustering &middot; ICP &middot; Product-market fit</p>
             </div>
           </article>
 
           <!-- Caelion -->
-          <article class="product product--reverse">
+          <article id="p-caelion" class="product product--reverse">
             <div class="product-media">
               <div class="stopmotion" data-seq="caelion" aria-hidden="true">
                 <img class="sm-frame sm-frame--active" src="./assets/stopmotion/caelion-still.webp?v=1" width="1280" height="714" alt="" decoding="async" loading="lazy">
               </div>
             </div>
             <div class="product-body">
-              <div class="product-stage">[STAGE_02] &middot; ARCHITECT</div>
-              <h2 class="product-name">Caelion</h2>
+              <div class="product-stage">Stage 2 &middot; Architect</div>
+              <h2 class="product-name">CaelionCRM</h2>
               <a class="product-link" href="https://caelion.app" target="_blank" rel="noopener">caelion.app <span class="product-link-arrow">&rarr;</span></a>
               <p class="product-thesis">A CRM that works the room, not just stores it.</p>
-              <p class="product-desc">Most CRMs are filing cabinets: you put the work in, and they hand it back when you ask. Caelion is built the other way round. It reads what is happening across your tools, decides what each relationship needs next, and does it. It drafts the follow-up, updates the record and nudges the deal that has gone quiet, then tells you what it did. It runs quietly underneath everything else you use, so there is no new app to live in.</p>
+              <p class="product-desc">Most CRMs wait for you to type things in. CaelionCRM watches your email, calendar and the tools you already use, then does the next step itself: it sends the follow-up, updates the record and flags the deal that has gone quiet. You get a note of what it did.</p>
               <ul class="product-facts" role="list">
-                <li>Acts on your relationships instead of waiting for you to log them</li>
-                <li>Drafts follow-ups and next steps, and flags the deals going cold</li>
-                <li>Keeps every record tidy and current on its own</li>
-                <li>Runs headless behind your existing tools, so there is no new inbox to check</li>
+                <li>Logs your relationships for you</li>
+                <li>Drafts follow-ups and flags deals going cold</li>
+                <li>Works inside your existing tools, no new app to open</li>
               </ul>
-              <p class="product-focus">Agentic CRM &middot; Relationship automation &middot; Headless &middot; In development</p>
             </div>
           </article>
 
           <!-- Weft -->
-          <article class="product">
+          <article id="p-devdjinn" class="product">
             <div class="product-media">
               <div class="stopmotion" data-seq="weft" aria-hidden="true">
                 <img class="sm-frame sm-frame--active" src="./assets/stopmotion/weft-still.webp?v=1" width="1280" height="714" alt="" decoding="async" loading="lazy">
               </div>
             </div>
             <div class="product-body">
-              <div class="product-stage">[STAGE_03] &middot; BUILD</div>
+              <div class="product-stage">Stage 3 &middot; Build</div>
               <h2 class="product-name">Dev Djinn</h2>
               <p class="product-thesis">Your work, woven into one map.</p>
-              <p class="product-desc">Your real work is scattered and mostly invisible: half-finished branches on your laptop, decisions buried in a chat that already ended, notes in five places, and nothing tying a broken deploy back to the change that caused it. Dev Djinn watches quietly in the background and weaves all of it into one map you can search, share, and pick back up tomorrow.</p>
+              <p class="product-desc">Half-finished branches, decisions lost in old chats, notes in five places, and nothing linking a broken deploy to the change behind it. Dev Djinn runs in the background and pulls all of it into one map you can search, share and pick up tomorrow.</p>
               <ul class="product-facts" role="list">
-                <li>Shows the work actually in progress, not just what has been finished and filed</li>
-                <li>Keeps a readable record of what an AI assistant did and why, long after the chat is gone</li>
-                <li>Notes, tasks and code all linked together and searchable</li>
-                <li>Tells you what has gone quiet, what is overdue, and what just broke</li>
-                <li>Runs on your own machine, so your code never has to leave it</li>
+                <li>Shows work in progress, not just finished tickets</li>
+                <li>Keeps a record of what an AI assistant changed and why</li>
+                <li>Tells you what has stalled, what is late and what just broke</li>
+                <li>Runs on your machine, so your code stays there</li>
               </ul>
-              <p class="product-focus">Developer experience &middot; Context handoff &middot; Local-first</p>
             </div>
           </article>
 
           <!-- thewoofback.com -->
-          <article class="product product--reverse">
+          <article id="p-woofback" class="product product--reverse">
             <div class="product-media">
               <div class="stopmotion" data-seq="woofback" aria-hidden="true">
                 <img class="sm-frame sm-frame--active" src="./assets/stopmotion/woofback-still.webp?v=2" width="1280" height="714" alt="" decoding="async" loading="lazy">
               </div>
             </div>
             <div class="product-body">
-              <div class="product-stage">[STAGE_04] &middot; LAUNCH</div>
+              <div class="product-stage">Stage 4 &middot; Launch</div>
               <h2 class="product-name">thewoofback.com</h2>
               <a class="product-link" href="https://thewoofback.com" target="_blank" rel="noopener">thewoofback.com <span class="product-link-arrow">&rarr;</span></a>
               <p class="product-thesis">An entire growth department, in one system.</p>
-              <p class="product-desc">Give it a subject and it researches, writes and publishes the finished piece. Then it keeps watch: where you rank, which AI assistants are quoting you, who visited, who got in touch, and what it was worth. Run one brand or fifty side by side, each with its own team, look and voice. When you need more clients, it goes and finds them for you.</p>
+              <p class="product-desc">Give it a topic and it researches, writes and publishes the piece. Then it tracks where you rank, which AI assistants quote you, who visited and who got in touch. It runs one brand or fifty, finds new clients, and with Fieldwork built in it also makes UGC video ads from a brief.</p>
               <ul class="product-facts" role="list">
-                <li>Researches, writes and publishes finished work, with every figure traced to a named source and date</li>
-                <li>Tracks where you rank, and which AI assistants are quoting you</li>
-                <li>Turns readers into enquiries: forms, scoring, and routing straight to your inbox or CRM</li>
-                <li>Tests two versions of a page against each other and keeps the winner</li>
-                <li>Watches your backlinks, page speed, broken links and the keywords you are missing</li>
-                <li>Finds new clients, audits their site, and estimates what they already spend on ads</li>
-                <li>Client-ready reports every month, without you rewriting them</li>
+                <li>Publishes finished articles, every figure linked to its source</li>
+                <li>Tracks Google rankings and AI assistant mentions</li>
+                <li>Turns readers into leads and sends them to your inbox or CRM</li>
+                <li>Fieldwork: UGC video ads from script to scheduled post, checked before anything is paid for</li>
+                <li>Monthly client reports, written for you</li>
               </ul>
-              <p class="product-focus">SEO &middot; AEO &middot; GEO &middot; E-E-A-T &middot; Attribution</p>
             </div>
           </article>
 
           <!-- DoorYard -->
-          <article class="product">
+          <article id="p-dooryard" class="product">
             <div class="product-media">
               <div class="stopmotion" data-seq="dooryard" aria-hidden="true">
                 <img class="sm-frame sm-frame--active" src="./assets/stopmotion/dooryard-01.webp?v=2" width="1280" height="714" alt="" decoding="async" fetchpriority="low">
@@ -417,41 +301,62 @@
               </div>
             </div>
             <div class="product-body">
-              <div class="product-stage">[STAGE_05] &middot; SCALE</div>
+              <div class="product-stage">Stage 5 &middot; Scale</div>
               <h2 class="product-name">DoorYard</h2>
               <a class="product-link" href="https://dooryardapp.com" target="_blank" rel="noopener">dooryardapp.com <span class="product-link-arrow">&rarr;</span></a>
               <p class="product-thesis">The most under-used asset in home services is a route that is already moving.</p>
-              <p class="product-desc">A crew already parked on your street can mow one more lawn for almost nothing extra. DoorYard lets them offer that spare slot, at a set price, to every household nearby who asked to hear about it, and neighbours book it with one tap. The crew fills a gap in the day. The street gets same-day work. Nobody pays for a phone number that never answers.</p>
+              <p class="product-desc">A crew already parked on your street can mow one more lawn for almost nothing extra. DoorYard offers that spare slot, at a set price, to the neighbours who asked to hear about it, and they book it with one tap.</p>
               <ul class="product-facts" role="list">
-                <li>Offers only go out when a crew is genuinely close by</li>
-                <li>You pay when a job is actually booked, never for a lead that goes nowhere</li>
-                <li>Two extra jobs a day is around $1,600 a month of work that would have been missed</li>
-                <li>One tap to book, on the phone people already have</li>
+                <li>Offers only go out when a crew is close by</li>
+                <li>You pay for booked jobs, not leads</li>
+                <li>Two extra jobs a day is around $1,600 a month</li>
+                <li>One tap to book, no app to install</li>
               </ul>
-              <p class="product-focus">Route density &middot; Demand aggregation &middot; Same-day fulfilment</p>
+            </div>
+          </article>
+
+          <!-- mobouros -->
+          <article id="p-mobouros" class="product product--reverse">
+            <div class="product-media">
+              <div class="stopmotion" data-seq="mobouros" aria-hidden="true">
+                <img class="sm-frame sm-frame--active" src="./assets/stopmotion/mobouros-still.webp?v=1" width="1280" height="714" alt="" decoding="async" loading="lazy">
+              </div>
+            </div>
+            <div class="product-body">
+              <div class="product-stage">Stage 5 &middot; Scale</div>
+              <h2 class="product-name">mobouros</h2>
+              <a class="product-link" href="https://mobouros.com" target="_blank" rel="noopener">mobouros.com <span class="product-link-arrow">&rarr;</span></a>
+              <p class="product-thesis">Cold email that lands in the inbox.</p>
+              <p class="product-desc">Connect as many sending inboxes as you need. mobouros warms them up, spreads the sending across them and watches your reputation, so mail lands in the inbox, not spam. It finds the right people, writes a first line for each, sends the follow-ups and stops the moment someone replies.</p>
+              <ul class="product-facts" role="list">
+                <li>Unlimited inboxes, with warm-up and rotation</li>
+                <li>Multi-step sequences with A/B tests</li>
+                <li>Built-in lead database, checked before sending</li>
+                <li>Every reply in one inbox, sorted by intent</li>
+                <li>An AI agent that answers replies and books meetings</li>
+              </ul>
             </div>
           </article>
 
           <!-- Vervelio Labs -->
-          <article class="product product--reverse">
+          <article id="p-labs" class="product">
             <div class="product-media">
               <div class="stopmotion" data-seq="labs" aria-hidden="true">
                 <img class="sm-frame sm-frame--active" src="./assets/stopmotion/labs-still.webp?v=1" width="1280" height="714" alt="" decoding="async" loading="lazy">
               </div>
             </div>
             <div class="product-body">
-              <div class="product-stage">[EVERY_STAGE] &middot; SECURE</div>
+              <div class="product-stage">Every stage &middot; Security</div>
               <h2 class="product-name">Vervelio Labs</h2>
               <a class="product-link" href="https://verveliolabs.com" target="_blank" rel="noopener">verveliolabs.com <span class="product-link-arrow">&rarr;</span></a>
               <p class="product-thesis">We break our own agents first, so nobody else gets to.</p>
-              <p class="product-desc">Everything above talks to real data and takes real actions, which makes it a target. Vervelio Labs is the in-house red team that attacks each product before it ships. It slips hidden instructions into documents, tricks agents into misusing their tools and tries to walk data out the door, then helps close every hole it finds. Now it runs the same campaigns for other teams building with AI.</p>
+              <p class="product-desc">Everything above touches real data and takes real actions, which makes it a target. Vervelio Labs is our in-house red team. It hides instructions in documents, tricks agents into misusing their tools and tries to get data out, then helps close each hole. Now it does the same for other teams building with AI.</p>
               <ul class="product-facts" role="list">
-                <li>Two-week red-team sprints against a single AI app or agent</li>
-                <li>Findings ranked by severity, with the steps to reproduce each one</li>
-                <li>A retest once fixes land, and a signed letter customers can check</li>
-                <li>Every Vervelio product is tested by the crew before launch</li>
+                <li>Two-week red-team sprints on one AI app or agent</li>
+                <li>Findings ranked by severity, with steps to reproduce</li>
+                <li>A retest after fixes, and a signed letter for your customers</li>
+                <li>Every Vervelio product is tested before launch</li>
               </ul>
-              <p class="product-focus">AI red teaming &middot; Prompt injection &middot; Agent security &middot; Attestation</p>
             </div>
           </article>
 
@@ -459,33 +364,95 @@
       </div>
     </section>
 
-    <!-- DEVELOPMENT PIPELINE -->
-    <section class="section section-pipeline" id="pipeline">
+    <!-- WHAT WE DO -->
+    <section class="section section-what" id="what">
       <div class="container">
-        <div class="section-label">// DEVELOPMENT_PIPELINE</div>
-        <p class="section-intro">What's on the bench right now. Listed honestly: status is what it is, not what we'd like it to be.</p>
-        <div class="process-terminal">
-          <div class="terminal-bar">
-            <span class="terminal-dot"></span>
-            <span class="terminal-dot"></span>
-            <span class="terminal-dot"></span>
-            <span class="terminal-title">queue.log</span>
+        <h2 class="section-label">What we do</h2>
+        <div class="what-grid">
+          <div class="what-card">
+            <div class="card-tag">Our own products</div>
+            <h2>We build our own products, and ship them.</h2>
+            <p>Seven so far, from demand research to cold email. Each one starts as a problem we can prove, and ends as software people use.</p>
+            <p class="what-tags">Generative AI &middot; Agentic AI</p>
           </div>
+          <div class="what-card">
+            <div class="card-tag">Co-Founder Matching</div>
+            <h2>Half a team finds the other half.</h2>
+            <p>Engineers who can build anything but can't sell it. Operators with the customer but no way to build. We pair them and give them a working stack on day one.</p>
+            <p class="what-tags">Technical co-founders &middot; Fractional CTO</p>
+          </div>
+          <div class="what-card">
+            <div class="card-tag">Shared Foundation</div>
+            <h2>Start on day 40, not day 1.</h2>
+            <p>Sign-in, billing, dashboards, alerts, analytics and AI guardrails are already built and battle-tested across our products. You inherit all of it and spend your time on what makes you different.</p>
+            <p class="what-tags">Governance controls &middot; Data pipelines</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="section section-process">
+      <div class="container">
+        <h2 class="section-label">How we build</h2>
+        <div class="process-terminal">
+          
+          <div class="terminal-body process-body">
+            <div class="process-step">
+              <span class="process-ts">Stage 1</span>
+              <span class="process-name">Identify</span>
+              <p class="process-desc">Find a problem people already complain about, and check they would pay to have it fixed. Most ideas stop here.</p>
+              <a class="process-link" href="#p-nidamind">See it in NidaMind &rarr;</a>
+            </div>
+            <div class="process-step">
+              <span class="process-ts">Stage 2</span>
+              <span class="process-name">Architect</span>
+              <p class="process-desc">Pick the stack, sketch the data and set the limits before writing code. Start from the parts we have already built.</p>
+              <a class="process-link" href="#p-caelion">See it in CaelionCRM &rarr;</a>
+            </div>
+            <div class="process-step">
+              <span class="process-ts">Stage 3</span>
+              <span class="process-name">Build</span>
+              <p class="process-desc">Sign-in, billing, monitoring and deploys are already done, so the time goes into what makes the product different.</p>
+              <a class="process-link" href="#p-devdjinn">See it in Dev Djinn &rarr;</a>
+            </div>
+            <div class="process-step">
+              <span class="process-ts">Stage 4</span>
+              <span class="process-name">Launch</span>
+              <p class="process-desc">Put it in front of real users, with monitoring and a way to roll back. Then change it based on what they actually do.</p>
+              <a class="process-link" href="#p-woofback">See it in thewoofback.com &rarr;</a>
+            </div>
+            <div class="process-step">
+              <span class="process-ts">Stage 5</span>
+              <span class="process-name">Scale</span>
+              <p class="process-desc">Make it faster, add what customers ask for, and carry what we learned into the next product.</p>
+              <a class="process-link" href="#p-dooryard">See it in DoorYard and mobouros &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVELOPMENT PIPELINE -->
+    <section class="section section-pipeline" id="bench">
+      <div class="container">
+        <h2 class="section-label">On the bench</h2>
+        <p class="section-intro">What we're working on now, and where each one really stands.</p>
+        <div class="process-terminal">
+          
           <div class="terminal-body process-body">
 
             <div class="process-step pipeline-step">
               <div class="pipeline-head">
-                <span class="process-ts">[STARTED]</span>
-                <span class="status-pill status-pill--building">BUILDING</span>
+                                <span class="status-pill status-pill--building">BUILDING</span>
               </div>
               <span class="process-name">KrispyVibes: event solutions</span>
-              <p class="process-desc">Apps that let a whole group share the moment at weddings, corporate events, training days and cruises. Guests scan a code on the table, then take photos, record short video toasts and leave voice notes, and it all collects into one shared album the hosts keep. Event planning and management software sits behind it, brandable as your own if you already run events.</p>
+              <p class="process-desc">Apps for weddings, company events, training days and cruises. Guests scan a code on the table, then take photos, record short video toasts and leave voice notes, and it all collects into one shared album the hosts keep. Event planners can run it under their own brand.</p>
             </div>
 
             <div class="process-step pipeline-step">
               <div class="pipeline-head">
-                <span class="process-ts">[QUEUED]</span>
-                <span class="status-pill status-pill--design">DESIGN</span>
+                                <span class="status-pill status-pill--design">DESIGN</span>
               </div>
               <span class="process-name">Accounting Hero</span>
               <p class="process-desc">Accounting and payroll. Scoped, in design. No code committed yet.</p>
@@ -493,17 +460,7 @@
 
             <div class="process-step pipeline-step">
               <div class="pipeline-head">
-                <span class="process-ts">[QUEUED]</span>
-                <span class="status-pill status-pill--design">DESIGN</span>
-              </div>
-              <span class="process-name">UGC &amp; affiliate agency</span>
-              <p class="process-desc">Scoped, in design. No code committed yet.</p>
-            </div>
-
-            <div class="process-step pipeline-step">
-              <div class="pipeline-head">
-                <span class="process-ts">[QUEUED]</span>
-                <span class="status-pill status-pill--design">DESIGN</span>
+                                <span class="status-pill status-pill--design">DESIGN</span>
               </div>
               <span class="process-name">Stock tracking</span>
               <p class="process-desc">Scoped, in design. No code committed yet.</p>
@@ -517,11 +474,11 @@
     <!-- DETROIT -->
     <section class="section section-detroit">
       <div class="container">
-        <div class="section-label">// ORIGIN</div>
-        <div class="detroit-content">
+                <div class="detroit-content">
           <h2>Rooted in Detroit.</h2>
-          <p>Detroit understands reinvention. It knows what it means to build something from nothing and to bet on craft when the world has moved on. We build the same way.</p>
-          <p class="detroit-sub">We work with founders, engineers, and business builders anywhere in the world. Geography is not a filter. Passion is.</p>
+          <p>Detroit has rebuilt itself more than once, by people who made things with their hands. That is how we like to work too.</p>
+          <p>Our aim is simple: remove whatever stands between a good idea and shipped software. Good ideas should get built whether or not the person who had them can code or sell, so we put the two halves together, and our own products show it works.</p>
+          <p class="detroit-sub">We are based here, and we work with founders and engineers wherever they are.</p>
         </div>
       </div>
     </section>
@@ -565,7 +522,8 @@
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="#products">Products</a>
-        <a href="#pipeline">Pipeline</a>
+        <a href="#what">What we do</a>
+        <a href="#bench">Bench</a>
         <a href="/blog">Blog</a>
         <a href="mailto:hello@vervelio.com">hello@vervelio.com</a>
         <a href="#main" class="footer-top">Back to top &uarr;</a>
@@ -576,6 +534,6 @@
     </div>
   </footer>
 
-  <script src="./app.js?v=4" defer></script>
+  <script src="./app.js?v=5" defer></script>
 </body>
 </html>
